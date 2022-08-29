@@ -54,6 +54,7 @@ class SummaryFragment : Fragment() {
 
         binding?.apply {
             viewModel = sharedViewModel
+            lifecycleOwner = viewLifecycleOwner
             sendButton.setOnClickListener { sendOrder() }
         }
     }
