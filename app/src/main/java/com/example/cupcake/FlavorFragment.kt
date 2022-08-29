@@ -19,8 +19,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.cupcake.databinding.FragmentFlavorBinding
 
 /**
@@ -36,7 +36,7 @@ class FlavorFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val fragmentBinding = FragmentFlavorBinding.inflate(inflater, container, false)
         binding = fragmentBinding
         return fragmentBinding.root
@@ -53,8 +53,8 @@ class FlavorFragment : Fragment() {
     /**
      * Navigate to the next screen to choose pickup date.
      */
-    fun goToNextScreen() {
-        Toast.makeText(activity, "Next", Toast.LENGTH_SHORT).show()
+    private fun goToNextScreen() {
+        findNavController().navigate(R.id.action_flavorFragment_to_pickupFragment)
     }
 
     /**
